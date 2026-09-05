@@ -1,0 +1,16 @@
+Lab Exercise 3 Guide Questions: Fetch API
+
+1. What are the main differences between XMLHttpRequest and Fetch API?
+- Syntax & Promises: Fetch uses modern JavaScript Promises (.then() and .catch()), leading to cleaner code compared to XHR's event-based architecture (onreadystatechange).
+- Response Handling: Fetch requires explicit parsing using methods like .json(), whereas XHR handles raw response data directly.
+- Error Handling: Fetch does NOT reject its promise on HTTP error status codes (like 404 or 500). It only rejects on network failures. XHR requires checking status === 200 manually inside an event listener.
+
+2. Why is the Fetch API considered more modern and readable?
+- It eliminates "callback hell" and complex nested event handlers by using Promises. Its chainable method design (.then()) allows developers to write clean, linear, and easier-to-read asynchronous code.
+
+3. What is the purpose of the .then() and .catch() methods in Fetch?
+- .then(): Used to handle resolved Promises. It processes the HTTP response once available (e.g., converting response to JSON) and receives the final parsed data.
+- .catch(): Used to catch and handle errors that occur during the request life cycle, such as network connection drops or thrown errors.
+
+4. What happens when you send a POST request to the placeholder API?
+- The fake online REST API (JSONPlaceholder) processes the incoming JSON body, simulates creating a resource on the server, and returns a 201 Created HTTP status along with a fake generated ID (usually 101). Note that the server does not actually persist or save the data to a database permanently.
